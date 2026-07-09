@@ -221,12 +221,9 @@ class ChessGame {
             }
         });
         
-        // Empêcher le double-tap zoom sur mobile
-        document.addEventListener('touchstart', (e) => {
-            if (e.target.closest('.square') || e.target.closest('.btn')) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+        // La gestion du double-tap est maintenant assurée par le CSS :
+        // body { touch-action: manipulation; }
+        // Aucun écouteur touchstart n'est nécessaire.
     }
 }
 
